@@ -1,0 +1,117 @@
+@font-face {
+    font-family: 'Labrada';
+    src: url('assets/fonts/Labrada.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Labrada';
+    src: url('assets/fonts/Labrada-Italic.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+  }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: 'Labrada', serif;
+    font-weight: 200;
+    background-color: #f9f5f5;
+    color: #111;
+  }
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.click-tag {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.collection {
+    padding: 3rem 2rem 1rem;
+}
+
+.collection h2 {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.grey-bg {
+    background: linear-gradient(to bottom, #ddd, #999);
+    padding: 2rem;
+}
+
+.hero {
+    text-align: center;
+    padding-top: 2rem;
+}
+    
+.hero-img {
+    width: 80%;
+    max-width: 700px;
+    height: auto;
+}
+
+.icon {
+    height: 20px;
+    cursor: pointer;
+}
+
+.logo-img {
+    height: 30px;
+}
+
+.logo-text {
+    font-family: 'Labrada', serif;
+    font-size: 1.5rem;
+}
+    
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    padding: 1rem 2rem;
+    z-index: 100;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.products {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.products img {
+    width: 180px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    margin: 1rem auto;
+}

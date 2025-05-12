@@ -4,114 +4,281 @@
     font-weight: 100 900;
     font-style: normal;
   }
-  
   @font-face {
     font-family: 'Labrada';
     src: url('assets/fonts/Labrada-Italic.ttf') format('truetype');
     font-weight: 100 900;
     font-style: italic;
   }
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-body {
+  @font-face {
+    font-family: 'LoversQuarrel';
+    src: url('assets/fonts/LoversQuarrel.ttf') format('truetype');
+  }
+  
+  body {
     margin: 0;
     font-family: 'Labrada', serif;
-    font-weight: 200;
     background-color: #f9f5f5;
     color: #111;
   }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+  .clickline {
+    display: block;
+    margin-top: 0.3rem;
+  }
 
-.click-tag {
-    font-style: italic;
-    text-decoration: underline;
-}
-
-.collection {
-    padding: 3rem 2rem 1rem;
-}
-
-.collection h2 {
-    font-weight: 600;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-.grey-bg {
-    background: linear-gradient(to bottom, #ddd, #999);
-    padding: 2rem;
-}
-
-.hero {
-    text-align: center;
-    padding-top: 2rem;
-}
-    
-.hero-img {
-    width: 80%;
-    max-width: 700px;
+  .menu-icon {
+    display: none;
+    width: 24px;
     height: auto;
-}
-
-.icon {
-    height: 20px;
     cursor: pointer;
-}
+    margin-left: 1rem;
+  }
 
-.logo-img {
-    height: 30px;
-}
-
-.logo-text {
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    background-color: #f9f5f5;
+    padding: 1.5rem 2rem;
+    border-top: 1px solid #ccc;
+  }
+  
+  /* Style links in mobile menu */
+  .mobile-menu a {
+    text-decoration: none;
+    color: #111;
     font-family: 'Labrada', serif;
-    font-size: 1.5rem;
-}
-    
-.navbar {
+    font-size: 1.2rem;
+    font-weight: 100;
+  }
+  
+  /* Only show mobile menu on small screens */
+  @media (min-width: 769px) {
+    .mobile-menu {
+      display: none !important;
+    }
+  }
+  
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none !important;
+    }
+  
+    .menu-icon {
+      display: inline-block;
+    }
+  }
+  
+  .navbar {
+    background-color: #f9f5f5;
+    text-align: center;
+    padding: 1rem 1rem 1.5rem;
     position: sticky;
     top: 0;
-    background-color: #fff;
-    padding: 1rem 2rem;
-    z-index: 100;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
-}
-
-.nav-left, .nav-right {
+    z-index: 99;
+    border-bottom: 0.8px solid #bcbbbb;
+  }
+  
+  .nav-inner {
     display: flex;
-    gap: 1.5rem;
-    list-style: none;
-}
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    font-size: 0.9rem;
+    padding: 0 2rem;
+  }
+  
+  .nav-left, .nav-right {
+    display: flex;
+    gap: 3.5rem;
+    align-items: center;
+    height: auto;
+    cursor: pointer;
+  }
 
-.nav-logo {
+  .nav-links {
+    display: flex;
+    gap: 3.5rem;
+    align-items: center;
+    height: auto;
+    cursor: pointer;
+  }
+
+  .nav-right a img[alt="Cart"] {
+    width: 30px;
+    filter: grayscale(100%);
+    transition: filter 0.2s ease-in-out;
+  }
+
+  .nav-right a img[alt="Search"] {
+    width: 20px;
+    filter: grayscale(100%);
+    transition: filter 0.2s ease-in-out;
+  }
+  
+  .nav-right a img[alt="Search"]:hover {
+    filter: grayscale(20%);
+  }
+
+  .nav-left a {
+    text-decoration: none;
+    color: #111; 
+    font-weight: 100;
+    font-size: 20px;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .product-row {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    scroll-behavior: smooth;
+    flex-wrap: nowrap;
+    overflow: visible;
+    width: max-content;
+  }
+
+  .product-row-wrapper {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    flex: 1;
+    display: flex;
+  }
+  
+  .product-box {
+    flex: 0 0 calc(100% / 3);
+    max-width: calc(100% / 3);
+    background-size: 40rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 35rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .product-box img {
+    height: 90%;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .carrot-icon {
+    height: 10px;
+    transform: rotate(-90deg);
+    object-fit: contain;
+    position: relative;
+    bottom: 2px;
+  }
+
+  .nav-left a:hover {
+    color: #666; 
+  }
+  
+  .nav-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-}
-
-.products {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.products img {
-    width: 180px;
+    gap: 0rem;
+    pointer-events: none;
+  }
+  
+  .nav-logo img {
+    width: 50px;
     height: auto;
-    object-fit: contain;
-    border-radius: 6px;
-}
-
-.tagline {
+  }
+  
+  .logo-text {
+    font-family: 'Labrada', serif;
+    font-weight: 200;
+    font-size: 1.4rem;
+    position: relative;
+    top: 12px;
+  }
+  
+  .tagline {
+    font-style: italic;
+    text-align: center;
+    margin: 0.25rem 0 0.75rem;
     font-size: 1.2rem;
-    margin: 1rem auto;
-}
+    font-weight: 200;
+  }
+  
+  .italic {
+    font-style: italic;
+  }
+  
+  .underline {
+    text-decoration: underline;
+  }
+  
+  .hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.5rem 2rem 0.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .section-title h2 {
+    margin: 0;
+    font-weight: 500;
+  }
+  
+  .section-title button {
+    font-family: 'Labrada', serif;
+    font-weight: 100;
+    font-size: 17px;
+    border: 0.5px solid #ccc;
+    padding: 0.1rem 1.3rem 0.3rem;
+    border-radius: 6px;
+    background: #f9f5f5;
+    cursor: pointer;
+    margin-top: 0.5rem;
+  }
+
+  .section-title button a {
+    font-family: 'Labrada', serif;
+    font-weight: 100;
+    font-size: 17px;
+    text-decoration: none;
+  }
+  
+  .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    margin: 0;
+    width: 100vw;
+    overflow: visible ;
+    background-color: #f9f5f5;
+  }
+  
+  .arrow {
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .footer {
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Labrada', serif;
+    font-weight: 300;
+  }

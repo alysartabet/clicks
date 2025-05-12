@@ -1,57 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clicks — Home</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- NAVBAR -->
   <header class="navbar">
-    <nav>
-      <ul class="nav-left">
-        <li><a href="about.html">About</a></li>
-        <li><a href="#">Shop ▾</a></li>
-      </ul>
+    <nav class="nav-inner" id="menu-toggle">
+      <div class="nav-left" >
+        <div class="nav-links" id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="#">Shop <img src="assets/images/carrot.png" alt="▼" class="carrot-icon" /></a>
+        </div>
+        <img src="assets/images/menu.png" alt="Menu" class="menu-icon" id="menu-icon"/>
+      </div>
       <div class="nav-logo">
-        <img src="assets/images/logo.png" alt="Clicks logo" class="logo-img">
+        <img src="assets/images/logo.png" alt="logo" />
         <span class="logo-text">licks</span>
       </div>
-      <ul class="nav-right">
-        <li><a href="#"><img src="assets/images/search.png" alt="Search" class="icon"></a></li>
-        <li><a href="#"><img src="assets/images/checkout.png" alt="Checkout" class="icon"></a></li>
-      </ul>
+      <div class="nav-right">
+        <a href="#"><img src="assets/images/search.png" alt="Search" /></a>
+        <a href="#"><img src="assets/images/checkout.png" alt="Cart" /></a>
+      </div>
     </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="#">Shop <img src="assets/images/carrot.png" alt="▼" class="carrot-icon" /></a>
+    </div>
   </header>
+  <div>
+    <p class="tagline">
+      Where your journey matters.
+      <span class="clickline">
+        <span class="italic underline">Click</span> freely.
+      </span>
+    </p>
+  </div>
 
-  <!-- HERO -->
   <section class="hero">
-    <img src="assets/images/hero.png" alt="Hero shoes" class="hero-img">
-    <p class="tagline">Where your journey matters.<br><span class="click-tag">Click</span> freely.</p>
+    <img src="assets/images/hero.png" alt="Hero Image" />
   </section>
 
-  <!-- GARDEN COLLECTION -->
-  <section class="collection">
-    <h2>Shop GARDEN vol I</h2>
-    <div class="products">
-      <img src="assets/images/shoes/shgardenbb.png" alt="Garden shoe 1">
-      <img src="assets/images/shoes/shgardengb.png" alt="Garden shoe 2">
-      <img src="assets/images/shoes/shgardenpf.png" alt="Garden shoe 3">
+  <section class="section-title">
+    <h2>GARDEN vol I</h2>
+    <button><a href="#">Shop</a></button>
+  </section>
+
+  <section class="carousel">
+    <img class="arrow" src="assets/images/next.png" style="transform: rotate(180deg)" alt="Left" id="left-garden"/>
+    <div class="product-row-wrapper">
+      <div class="product-row" id="garden-track">
+        <div class="product-box" style="background-image: url('assets/images/pcont00.png')">
+          <img src="assets/images/shoes/garvol1/garvol100.png" alt="Shoe 0" />
+        </div>
+        <div class="product-box" style="background-image: url('assets/images/pcont00.png')">
+          <img src="assets/images/shoes/garvol1/garvol101.png" alt="Shoe 1" />
+        </div>
+        <div class="product-box" style="background-image: url('assets/images/pcont00.png')">
+          <img src="assets/images/shoes/garvol1/garvol102.png" alt="Shoe 2" />
+        </div>
+        <div class="product-box" style="background-image: url('assets/images/pcont00.png')">
+          <img src="assets/images/shoes/garvol1/garvol103.png" alt="Shoe 3" />
+        </div>
+        <div class="product-box" style="background-image: url('assets/images/pcont00.png')">
+          <img src="assets/images/shoes/garvol1/garvol104.png" alt="Shoe 4" />
+        </div>
+        <div class="product-box" style="background-image: url('assets/images/pcont00.png')">
+          <img src="assets/images/shoes/garvol1/garvol105.png" alt="Shoe 5" />
+        </div>
+      </div>
     </div>
+    <img class="arrow" src="assets/images/next.png" alt="Right" id="right-garden" />
   </section>
 
-  <!-- CHURCH COLLECTION -->
-  <section class="collection">
-    <h2>Shop CHURCH</h2>
-    <div class="products grey-bg">
-      <img src="assets/images/productcontainer.png" alt="Placeholder 1">
-      <img src="assets/images/productcontainer.png" alt="Placeholder 2">
-      <img src="assets/images/productcontainer.png" alt="Placeholder 3">
+  <section class="section-title">
+    <h2>CHURCH</h2>
+    <button><a href="#">Shop</a></button>
+  </section>
+
+  <section class="carousel">
+    <img class="arrow" src="assets/images/next.png" style="transform: rotate(180deg)" alt="Left" id="left-church" />
+    <div class="product-row-wrapper">
+      <div class="product-row" id="church-track">
+        <div class="product-box" style="background-image: url('assets/images/pcont01.png')">
+          <img src="assets/images/shoes/church/church00.png" alt="Shoe 0" />
+        </div>
+        <div class="product-box" style="background-image: url('assets/images/pcont01.png')">
+          <img src="assets/images/shoes/church/church01.png" alt="Shoe 1" />
+        </div>
+        <div class="product-box" style="background-image: url('assets/images/pcont01.png')">
+          <img src="assets/images/shoes/church/church02.png" alt="Shoe 2" />
+        </div>
+        <div class="product-box" style="background-image: url('assets/images/pcont01.png')">
+          <img src="assets/images/shoes/church/church03.png" alt="Shoe 3" />
+        </div>
+        <div class="product-box" style="background-image: url('assets/images/pcont01.png')">
+          <img src="assets/images/shoes/church/church04.png" alt="Shoe 4" />
+        </div>
+        <div class="product-box" style="background-image: url('assets/images/pcont01.png')">
+          <img src="assets/images/shoes/church/church05.png" alt="Shoe 5" />
+        </div>
+        <div class="product-box" style="background-image: url('assets/images/pcont01.png')">
+          <img src="assets/images/shoes/church/church06.png" alt="Shoe 6" />
+        </div>
+      </div>
     </div>
+    <img class="arrow" src="assets/images/next.png" alt="Right" id="right-church" />
   </section>
 
+  <footer class="footer">
+    © 2025 Clicks, Ltd. All Rights Reserved
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>

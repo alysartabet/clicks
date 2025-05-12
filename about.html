@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Clicks</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <nav class="nav-inner" id="menu-toggle">
+      <div class="nav-left">
+        <div class="nav-links" id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="#">Shop <img src="assets/images/carrot.png" alt="▼" class="carrot-icon" /></a>
+        </div>
+        <img src="assets/images/menu.png" alt="Menu" class="menu-icon" id="menu-icon"/>
+      </div>
+      <div class="nav-logo">
+        <img src="assets/images/logo.png" alt="logo" />
+        <span class="logo-text">licks</span>
+      </div>
+      <div class="nav-right">
+        <a href="#"><img src="assets/images/search.png" alt="Search" /></a>
+        <a href="#"><img src="assets/images/checkout.png" alt="Cart" /></a>
+      </div>
+    </nav>
+  </header>
+
+  <section style="padding: 3rem 2rem; text-align: center;">
+    <p><em><strong>There's no place like Clicks</strong></em></p>
+    <p>
+      Clicks was made for the curious. <br> Alysar asked: where do users actually go? And then she mapped it — 
+      with a Markov Chain. <br> This website explores the transition probabilities between the Home and About pages,
+      and uses math to find the PageRank of each.
+    </p>
+  </section>
+  <section style="padding: 2rem 4rem;">
+    <h3 style="text-align: center;">Live Markov Summary</h3>
+    <div style="display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; margin-top: 1.5rem;">
+      <div>
+        <h4 style="text-align: center;">Transition Matrix</h4>
+        <div id="matrix" style="font-family: monospace; font-size: 1.2rem; text-align: center;">
+          Calculating...
+        </div>
+      </div>
+      <div>
+        <h4 style="text-align: center;">Stationary Distribution</h4>
+        <div id="pagerank" style="font-family: monospace; font-size: 1.2rem; text-align: center;">
+          π = [ ... ]
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="display: flex; flex-direction: row; justify-content: center; padding: 2rem; gap: 3rem;">
+     <div>
+        <h3>PageRank State Diagram</h3>
+        <img src="assets/images/twostate_diagram.png" alt="PageRank diagram" style="width: 300px;" />
+     </div>
+     <div>
+        <h3>Stationary Dist. Graph</h3>
+        <canvas id="rankChart" width="400" height="200"></canvas>
+     </div>
+  </section>
+
+  <section style="padding: 2rem 4rem;">
+    <h3>Notes & Equations</h3>
+    <p>
+      A Markov Chain describes how users transition between states — like web pages.
+      <ul>
+        <li>The rows of the matrix represent current pages.</li>
+        <li>The columns represent where a user might go next.</li>
+        <li>The <strong>stationary distribution</strong> shows the long-term probability of landing on each page.</li>
+        <li>Here, About is more likely to be the final stop.</li>
+      </ul>
+    </p>
+    <p><strong>How I calculated it:</strong></p>
+    <ol>
+      <li>Solve: πP = π, with constraint π₀ + π₁ = 1</li>
+      <li>Solve for π₀ = 6/13 ≈ 0.462 and π₁ = 7/13 ≈ 0.538</li>
+      <li>So "About" has slightly higher PageRank</li>
+    </ol>
+  </section>
+
+  <footer class="footer">
+    © 2025 Clicks, Ltd. All Rights Reserved
+  </footer>
+  <script src="script.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", computeDynamicPageRank);
+    </script>
+</body>
+</html>
